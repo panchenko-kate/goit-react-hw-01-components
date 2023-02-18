@@ -1,24 +1,26 @@
+import { Table, Head, Bodyth, Title, String } from './TransactionHistiry.styled'
+
 export const TransactionHistiry = ({ items }) => {
     return (
-        <table className="transaction-history">
-        <thead>
+        <Table>
+        <Head>
             <tr>
-            <th>Type</th>
-            <th>Amount</th>
-            <th>Currency</th>
+            <Title>Type</Title>
+            <Title>Amount</Title>
+            <Title>Currency</Title>
             </tr>
-        </thead>
+        </Head>
 
         <tbody>
         {items.map(item => (
-            <tr key={item.id}>
-            <td>{item.type}</td>
-            <td>{item.amount}</td>
-            <td>{item.currency}</td>
-            </tr>
+            <String key={item.id}>
+            <Bodyth>{item.type}</Bodyth>
+            <Bodyth>{item.amount}</Bodyth>
+            <Bodyth>{item.currency}</Bodyth>
+            </String>
         ))}
         </tbody>
-        </table>
+        </Table>
     )
 }
 

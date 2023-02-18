@@ -1,12 +1,14 @@
 import PropTypes from 'prop-types';
+import { Item, Status } from './FriendListItem.styled'
+import { GrStatusGoodSmall } from 'react-icons/gr';
 
 export const FriendListItem = ({ id, avatar, name, isOnline }) => {
     return (
-        <li key={id} className="item">
-        <span className="status">{isOnline}</span>
+        <Item key={id}>
+        <Status style={{ color: isOnline ? 'green' : 'red' }}><GrStatusGoodSmall/>{isOnline}</Status>
         <img className="avatar" src={avatar} alt="User avatar" width="48" />
         <p className="name">{name}</p>
-        </li>
+        </Item>
     )
 }
 
@@ -17,3 +19,4 @@ FriendListItem.propTypes = {
     name: PropTypes.string.isRequired,
     isOnline: PropTypes.bool.isRequired,
 }
+
